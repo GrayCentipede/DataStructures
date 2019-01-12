@@ -1,4 +1,4 @@
-class DoublyLinkedList:
+class DoublyLinkedList(object):
 
     class Node:
 
@@ -40,10 +40,10 @@ class DoublyLinkedList:
     def __repr__(self):
         pass
 
-    def __eq__(self):
+    def __eq__(self, object):
         pass
 
-    def equals(self):
+    def equals(self, object):
         pass
 
     def __len__(self):
@@ -52,10 +52,10 @@ class DoublyLinkedList:
     def size(self):
         pass
 
-    def add_last(self):
+    def add_last(self, element):
         pass
 
-    def add_first(self):
+    def add_first(self, element):
         pass
 
     def remove_last(self):
