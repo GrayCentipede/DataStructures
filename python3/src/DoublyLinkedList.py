@@ -1,6 +1,6 @@
 class DoublyLinkedList(object):
 
-    class Node:
+    class Node(object):
 
         element  = None
         next     = None
@@ -80,4 +80,7 @@ class DoublyLinkedList(object):
         pass
 
     def index_of(self, element):
+        pass
+
+    def contains(self, element):
         pass
