@@ -140,10 +140,6 @@ class TestDoublyLinkedList(unittest.TestCase):
 
         self.assertEqual(str(l), correct_str)
 
-
-    def test_repr(self):
-        pass
-
     def test_eq(self):
         pass
 
