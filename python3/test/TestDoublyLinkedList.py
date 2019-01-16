@@ -1,4 +1,5 @@
 import unittest
+import random
 
 from src.DoublyLinkedList import DoublyLinkedList
 
@@ -124,7 +125,21 @@ class TestDoublyLinkedList(unittest.TestCase):
 
 
     def test_str(self):
-        pass
+        l = DoublyLinkedList()
+
+        correct_str = "["
+        
+        for i in range(99):
+        	n = random.randrange(1, 360)
+        	l.add(n)
+        	correct_str += str(n) + ", "
+
+        n = random.randrange(1, 360)
+        l.add(n)
+        correct_str += str(n) + "]"
+
+        self.assertEqual(str(l), correct_str)
+
 
     def test_repr(self):
         pass
