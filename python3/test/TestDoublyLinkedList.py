@@ -141,43 +141,205 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertEqual(str(l), correct_str)
 
     def test_equals(self):
-        pass
+        la = DoublyLinkedList()
+        lb = DoublyLinkedList()
+
+        self.assertEqual(la, lb)
+
+        for i in range(10):
+        	n = random.randrange(1, 360)
+        	la.add(n)
+
+        self.assertNotEqual(la, lb)
+
+        for i in la:
+        	lb.add(i)
+
+        self.assertEqual(la, lb)
+
+        lb.remove_last()
+        self.assertNotEqual(la, lb)
+
+        la.remove_last()
+        self.assertEqual()
+
+        self.assertNotEqual(la, None)
 
     def test_len(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertEqual(len(l), 0)
+
+        for i in range(100):
+        	l.add(i)
+
+        self.assertEqual(len(l), 100)
+
+        for i in range(50):
+        	l.remove_first()
+
+        self.assertEqual(len(l), 50)
 
     def test_add_last(self):
-        pass
+        la = DoublyLinkedList()
+        lb = DoublyLinkedList()
+
+        for i in range(1000):
+        	n = random.randint(1, 360)
+        	la.add(n)
+        	lb.add_last(n)
+
+        self.assertEqual(la, lb)
 
     def test_add_first(self):
-        pass
+        la = DoublyLinkedList()
+        lb = DoublyLinkedList()
+
+        for i in range(1000):
+        	n = random.randint(1, 360)
+        	la.add(n)
+        	lb.add_first(n)
+
+        self.assertEqual(la, lb.reverse())
 
     def test_remove_last(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertTrue(l.is_empty())
+
+        l.add('a')
+        l.add('b')
+        l.add('c')
+
+        self.assertEqual(len(l), 3)
+
+        l.remove_last()
+        self.assertEqual(len(l), 2)
+        self.assertEqual(l.get_last(), 'b')
+
+        l.remove_last()
+        self.assertEqual(len(l), 1)
+        self.assertEqual(l.get_last(), 'a')
+
+        l.remove_last()
+        self.assertRaises(IndexError, l.remove_last)
+        self.assertEqual(len(l), 0)
+        self.assertTrue(l.is_empty())
+
 
     def test_remove_first(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertTrue(l.is_empty())
+
+        l.add('a')
+        l.add('b')
+        l.add('c')
+
+        self.assertEqual(len(l), 3)
+
+        l.remove_first()
+        self.assertEqual(len(l), 2)
+        self.assertEqual(l.get_first(), 'b')
+
+        l.remove_first()
+        self.assertEqual(len(l), 1)
+        self.assertEqual(l.get_first(), 'c')
+
+        l.remove_first()
+        self.assertRaises(IndexError, l.remove_first)
+        self.assertEqual(len(l), 0)
+        self.assertTrue(l.is_empty())
 
     def test_get_last(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertRaises(IndexError, l.get_last)
+
+        for i in range(50):
+            l.add(i)
+            self.assertEqual(l.get_last(), i)
 
     def test_get_first(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertRaises(IndexError, l.get_first)
+
+        for i in range(50):
+            l.add_first(i)
+            self.assertEqual(l.get_first(), i)
 
     def test_get_element(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertRaises(IndexError, l.get_element, 10)
+
+        for i in range(101):
+        	l.add(i)
+
+        for i in range(25):
+        	n = randint(0, 100)
+        	self.assertEqual(l.get_element(n), n)
+
 
     def test_clone(self):
-        pass
+        la = DoublyLinkedList()
+        lb = la.clone()
+
+        self.assertEqual(la, lb)
+
+        for i in range(50):
+        	lb.add(i)
+
+        self.assertNotEqual(la, lb)
+
+        la = lb.clone()
+
+        self.assertEqual(la, lb)
 
     def test_reverse(self):
-        pass
+        la = DoublyLinkedList()
+        lb = DoublyLinkedList()
+
+        self.assertEqual(la, la.reverse())
+
+        for i in range(101):
+        	la.add(i)
+        	lb.add((100 - i))
+
+        self.assertNotEqual(la, lb)
+        self.assertEqual(la, lb.reverse())
+        self.assertEqual(la.reverse(), lb)
+        self.assertNotEqual(la.reverse(), lb.reverse())
 
     def test_index_of(self):
-        pass
+        l = DoublyLinkedList()
+
+        self.assertRaises(ValueError, l.index_of, 'a')
+
+        for i in range(5):
+        	l.add(1)
+
+        self.assertEqual(l.index_of(1), 0)
+
+        l.remove_last()
+        l.add(2)
+
+        self.assertEqual(l.index_of(2), 4)
+
+        l.remove_first()
+        l.add_first(2)
+
+        self.assertEqual(l.index_of(1), 1)
 
     def test_contains(self):
-        pass
+        l = DoublyLinkedList()
+
+        for i in range(5):
+        	self.assertFalse(l.contains(i))
+        	l.add(i)
+        	self.assertTrue(l.contains(i))
+
 
 if __name__ == '__main__':
 	unittest.main()
