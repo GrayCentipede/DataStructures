@@ -54,14 +54,19 @@ class DoublyLinkedList(object):
             raise StopIteration
 
     def __str__(self):
+        if (self.length == 0):
+            return '[]'
+
         s = '['
         counter = 0
 
         for i in self:
+            counter += 1
+
             if (counter < self.length):
                 s += str(i) + ', '
             else:
-                s += str(i) + ']'
+                s += str(i) + ']'    
 
         return s
 
