@@ -21,9 +21,9 @@ class DoublyLinkedList(object):
             self.head = self.tail = node
 
         else:
-        	node.previous = self.tail
-        	self.tail.next = node
-        	self.tail = node
+            node.previous = self.tail
+            self.tail.next = node
+            self.tail = node
 
         self.length += 1
 
@@ -73,11 +73,26 @@ class DoublyLinkedList(object):
     def __repr__(self):
         return str(self)
 
-    def __eq__(self, object):
-        pass
+    def __eq__(self, obj):
+        return self.equals(obj)
 
-    def equals(self, object):
-        pass
+    def equals(self, obj):
+        if (type(obj) is DoublyLinkedList):
+            if (len(self) == len(obj)):
+
+                if (self.is_empty() and obj.is_empty()):
+                    return True
+
+                m = obj.head
+
+                for i in self:
+                    if (m.element != i):
+                        return False
+                    m = m.next
+
+                return True
+
+        return False
 
     def __len__(self):
         return self.length
@@ -89,7 +104,18 @@ class DoublyLinkedList(object):
         self.add(element)
 
     def add_first(self, element):
-        pass
+        
+        node = self.Node(element)
+
+        if (self.head is None):
+            self.head = self.tail = node
+
+        else:
+            node.next = self.head
+            self.head.previous = node
+            self.head = node
+
+        self.length += 1
 
     def remove_last(self):
         pass
@@ -120,10 +146,20 @@ class DoublyLinkedList(object):
 
 
     def clone(self):
-        pass
+        copy = DoublyLinkedList()
+
+        for i in self:
+        	copy.add(i)
+
+        return copy
 
     def reverse(self):
-        pass
+        reverse = DoublyLinkedList()
+
+        for i in self:
+            reverse.add_first(i)
+
+        return reverse
 
     def index_of(self, element):
         counter = 0
