@@ -98,9 +98,15 @@ class DoublyLinkedList(object):
         pass
 
     def get_last(self):
+        if (self.tail is None):
+            raise IndexError('List is empty')
+
         return self.tail.element
 
     def get_first(self):
+        if (self.head is None):
+            raise IndexError('List is empty')
+
         return self.head.element
 
     def get_element(self, index):
