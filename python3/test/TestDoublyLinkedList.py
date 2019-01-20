@@ -161,7 +161,7 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertNotEqual(la, lb)
 
         la.remove_last()
-        self.assertEqual()
+        self.assertEqual(la, lb)
 
         self.assertNotEqual(la, None)
 
