@@ -28,7 +28,34 @@ class DoublyLinkedList(object):
         self.length += 1
 
     def delete(self, element):
-        pass
+        n = self.head
+
+        while (n is not None):
+
+            if (n.element == element):
+
+                if (n == self.head):
+                    self.remove_first()
+
+                elif (n == self.tail):
+                    self.remove_last()
+
+                else:
+                    m = n.previous
+                    o = n.next
+    
+                    if (m is not None):
+                        m.next = o
+                    if (o is not None):
+                        o.previous = m
+
+                    self.length -= 1
+    
+                return
+
+            n = n.next
+
+        raise ValueError('Element is not in the list.')
 
     def is_empty(self):
         return (self.length == 0)
@@ -118,10 +145,33 @@ class DoublyLinkedList(object):
         self.length += 1
 
     def remove_last(self):
-        pass
+        if (self.tail is None):
+            raise IndexError('List is empty')
+
+        m = self.tail.previous
+
+        if (m is not None):
+            m.next = None
+            self.tail = m
+        else:
+            self.head = self.tail = None   
+
+        self.length -= 1
 
     def remove_first(self):
-        pass
+        if (self.head is None):
+            raise IndexError('List is empty')
+
+        m = self.head.next
+
+        if (m is not None):
+            m.previous = None
+            self.head = m
+
+        else:
+            self.head = self.tail = None
+
+        self.length -= 1
 
     def get_last(self):
         if (self.tail is None):
@@ -138,12 +188,14 @@ class DoublyLinkedList(object):
     def get_element(self, index):
         counter = 0
 
+        if (self.length < index or index < 0):
+            raise IndexError('Given index surpaces or is below list\'s length')
+
         for i in self:
             if (counter == index):
                 return i
 
             counter += 1
-
 
     def clone(self):
         copy = DoublyLinkedList()
