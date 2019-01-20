@@ -32,7 +32,7 @@ class TestDoublyLinkedList(unittest.TestCase):
     def test_delete(self):
         l = DoublyLinkedList()
 
-        self.assertRaises(IndexError, l.delete, 0)
+        self.assertRaises(ValueError, l.delete, 0)
 
         for i in range(5):
             l.add(i)
@@ -54,7 +54,7 @@ class TestDoublyLinkedList(unittest.TestCase):
         self.assertFalse(l.contains(4))
         self.assertEqual(l.get_last(), 3)
         self.assertEqual(l.get_first(), 1)
-        self.assertEqual(l.index_of(4), -1)
+        self.assertRaises(ValueError, l.index_of, 4)
         self.assertEqual(l.get_elements(), 2)
 
         l.delete(1)
@@ -278,7 +278,7 @@ class TestDoublyLinkedList(unittest.TestCase):
         	l.add(i)
 
         for i in range(25):
-        	n = randint(0, 100)
+        	n = random.randint(0, 100)
         	self.assertEqual(l.get_element(n), n)
 
 
