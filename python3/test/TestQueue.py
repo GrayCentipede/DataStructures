@@ -6,10 +6,10 @@ from src.Stack import Stack
 
 class TestQueue(unittest.TestCase):
 
-    def test_push(self):
+    def test_enqueue(self):
         pass
 
-    def test_pop(self):
+    def test_dequeue(self):
         pass
 
     def test_peek(self):

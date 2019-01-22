@@ -10,10 +10,10 @@ class Queue(object):
     head = None
     tail = None
 
-    def push(self, element):
+    def enqueue(self, element):
         pass
 
-    def pop(self):
+    def dequeue(self):
         pass
 
     def peek(self):
