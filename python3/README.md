@@ -1,8 +1,8 @@
 # Python 3.7.1
 ## Data structures:
 * Doubly Linked List. [Definition](https://en.wikipedia.org/wiki/Doubly_linked_list)
-* Stacks. [Definition](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
-* Queues. [Definition](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
+* Stack. [Definition](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
+* Queue. [Definition](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
 ## Unit Testing & Importing Modules
 To do the following you must be in the ```python3``` directory.
