@@ -44,7 +44,7 @@ class TestStack(unittest.TestCase):
         s.push(1)
         self.assertEqual(s.peek(), 1)
         s.pop()
-        self.assertNotEquals(s.peek(), 1)
+        self.assertNotEqual(s.peek(), 1)
 
     def test_is_empty(self):
         s = Stack()
@@ -73,7 +73,7 @@ class TestStack(unittest.TestCase):
 
             sa.push(n)
 
-        self.assertNotEquals(sa, sb)
+        self.assertNotEqual(sa, sb)
 
         while (not sa.is_empty()):
             k = sa.pop()
