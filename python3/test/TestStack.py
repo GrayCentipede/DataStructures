@@ -1,7 +1,6 @@
 import unittest
 import random
 
-from src.Queue import Queue
 from src.Stack import Stack
 
 class TestStack(unittest.TestCase):
