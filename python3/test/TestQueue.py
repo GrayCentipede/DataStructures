@@ -40,14 +40,14 @@ class TestQueue(unittest.TestCase):
         self.assertRaises(IndexError, q.peek)
 
         q.enqueue(0)
-        self.assertEqual(s.peek(), 0)
+        self.assertEqual(q.peek(), 0)
 
         q.enqueue(1)
-        self.assertNotEqual(s.peek(), 1)
-        self.assertEqual(s.peek(), 0)
+        self.assertNotEqual(q.peek(), 1)
+        self.assertEqual(q.peek(), 0)
 
         q.dequeue()
-        self.assertEqual(s.peek(), 1)        
+        self.assertEqual(q.peek(), 1)        
 
     def test_is_empty(self):
         q = Queue()
