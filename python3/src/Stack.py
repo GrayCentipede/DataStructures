@@ -8,7 +8,6 @@ class Stack(object):
             self.element = element
 
     head = None
-    tail = None
 
     def push(self, element):
         node = self.Node(element)
