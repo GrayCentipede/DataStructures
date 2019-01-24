@@ -12,10 +12,10 @@ class TestQueue(unittest.TestCase):
         q.enqueue(1)
         self.assertFalse(q.is_empty())
 
-        self.assertEquals(q.peek(), 1)
+        self.assertEqual(q.peek(), 1)
 
         q.enqueue(2)
-        self.assertNotEquals(q.peek(), 2)
+        self.assertNotEqual(q.peek(), 2)
 
     def test_dequeue(self):
         q = Queue()
@@ -26,9 +26,9 @@ class TestQueue(unittest.TestCase):
             q.enqueue(i)
 
         for i in range(9):
-            self.assertEquals(q.peek(), i)
+            self.assertEqual(q.peek(), i)
             q.dequeue()
-            self.assertNotEquals(q.peek(), i)
+            self.assertNotEqual(q.peek(), i)
 
         self.assertFalse(q.is_empty())
         q.dequeue()
@@ -40,14 +40,14 @@ class TestQueue(unittest.TestCase):
         self.assertRaises(IndexError, q.peek)
 
         q.enqueue(0)
-        self.assertEquals(s.peek(), 0)
+        self.assertEqual(s.peek(), 0)
 
         q.enqueue(1)
-        self.assertNotEquals(s.peek(), 1)
-        self.assertEquals(s.peek(), 0)
+        self.assertNotEqual(s.peek(), 1)
+        self.assertEqual(s.peek(), 0)
 
         q.dequeue()
-        self.assertEquals(s.peek(), 1)        
+        self.assertEqual(s.peek(), 1)        
 
     def test_is_empty(self):
         q = Queue()
@@ -63,7 +63,7 @@ class TestQueue(unittest.TestCase):
             q.dequeue()
             counter += 1
 
-        self.assertEquals(counter, 1000)
+        self.assertEqual(counter, 1000)
 
     def test_equals(self):
         qa = Queue()
@@ -75,20 +75,20 @@ class TestQueue(unittest.TestCase):
             r = random.randint(1, 200)
 
             qa.enqueue(r)
-            self.assertNotEquals(qa, qb)
+            self.assertNotEqual(qa, qb)
             qb.enqueue(r)
-            self.assertEquals(qa, qb)
+            self.assertEqual(qa, qb)
 
         for i in range(50):
             qa.dequeue()
-            self.assertNotEquals(qa, qb)
+            self.assertNotEqual(qa, qb)
             qb.dequeue()
-            self.assertEquals(qa, qb)
+            self.assertEqual(qa, qb)
 
     def test_str(self):
         q = Queue()
 
-        self.assertEquals(str(q), '')
+        self.assertEqual(str(q), '')
 
         s = ''
 
@@ -105,12 +105,12 @@ class TestQueue(unittest.TestCase):
         q.enqueue(929)
         s = '929 ' + s
 
-        self.assertEquals(str(q), s)
+        self.assertEqual(str(q), s)
 
         s = s[:-4]
         q.dequeue()
 
-        self.assertEquals(str(q), s)
+        self.assertEqual(str(q), s)
 
 if __name__ == '__main__':
     unittest.main(verbosity = 2)
