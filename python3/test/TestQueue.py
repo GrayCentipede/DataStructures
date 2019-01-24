@@ -93,7 +93,7 @@ class TestQueue(unittest.TestCase):
         s = ''
 
         for i in range(50):
-            r = random.random.randint(1, 200)
+            r = random.randint(1, 200)
 
             q.enqueue(r)
             if (s == ''):
