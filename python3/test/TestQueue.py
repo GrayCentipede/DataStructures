@@ -102,12 +102,8 @@ class TestQueue(unittest.TestCase):
                 s = str(r) + ' ' + s
                 
 
-        q.enqueue(929)
-        s = '929 ' + s
-
-        self.assertEqual(str(q), s)
-
-        s = s[:-4]
+        k = len(str(q.peek()))
+        s = s[:-(k+1)]
         q.dequeue()
 
         self.assertEqual(str(q), s)
