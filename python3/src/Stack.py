@@ -63,6 +63,8 @@ class Stack(object):
                 m = m.next
 
             return True
+            
+        return False
 
 
     def __eq__(self, obj):
