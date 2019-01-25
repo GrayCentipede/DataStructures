@@ -234,3 +234,9 @@ class DoublyLinkedList(object):
             counter += 1
 
         return False
+
+    def mergesort(self):
+        pass
+
+    def mergesort_list(list):
+        pass

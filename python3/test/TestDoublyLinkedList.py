@@ -340,6 +340,11 @@ class TestDoublyLinkedList(unittest.TestCase):
         	l.add(i)
         	self.assertTrue(l.contains(i))
 
+    def test_mergesort(self):
+        pass
+
+    def test_mergesort_list(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main(verbosity = 2)
