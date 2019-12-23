@@ -42,7 +42,19 @@ class ArraySorter(object):
         pass
 
     def insertion_sort(self, array):
-        pass
+        n = len(array)
+
+        for i in range(1, n):
+            if (array[i-1] > array[i]):
+                self.swap(i-1, i, array)
+                for j in range(i-1):
+                    k = (i - 1) - j
+                    if (array[k - 1] > array[k]):
+                        self.swap(k-1, k, array)
+                    else:
+                        break
+
+        return array
 
     def bucket_sort(self, array):
         pass
