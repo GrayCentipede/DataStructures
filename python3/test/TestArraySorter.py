@@ -8,9 +8,7 @@ class TestArraySorter(unittest.TestCase):
     def is_sorted(self, array):
         n = len(array)
 
-        for i in range(n):
-            if ((i + 1) == n):
-                break
+        for i in range(n - 1):
             if (array[i] > array[i + 1]):
                 return False
 
