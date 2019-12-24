@@ -15,13 +15,7 @@ class TestArraySorter(unittest.TestCase):
         return True
 
     def generate_random_array(self, n):
-        x = []
-
-        for i in range(n):
-            m = random.randint(0, 360)
-            x.append(m)
-
-        return x
+        return [random.randint(0, 360) for i in range(n)]
 
     def test_bubble_sort(self):
         a = self.generate_random_array(10)
