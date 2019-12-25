@@ -50,7 +50,7 @@ class TestArraySorter(unittest.TestCase):
         self.assertFalse(self.is_sorted(a))
 
         sorter = ArraySorter()
-        a = sorter.test_quick_sort(a)
+        a = sorter.quick_sort(a)
         self.assertTrue(self.is_sorted(a))
 
         a.append(a[-1] - 1)
