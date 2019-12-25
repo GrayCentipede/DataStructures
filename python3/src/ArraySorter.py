@@ -1,3 +1,5 @@
+import random
+
 class ArraySorter(object):
 
     def swap(self, i, j, array):
@@ -36,7 +38,27 @@ class ArraySorter(object):
         return array
 
     def quick_sort(self, array):
-        pass
+        n = len(array)
+
+        if (n <= 1):
+            return array
+
+        pivot  = random.randint(0, n - 1)
+
+        lesser  = []
+        greater = []
+
+        for k in range(n - 1):
+            if (k != pivot):
+                if (array[k] <= array[pivot]):
+                    lesser.append(array[k])
+                else:
+                    greater.append(array[k])
+
+        lesser  = self.quick_sort(lesser)
+        greater = self.quick_sort(greater)
+
+        return lesser + [array[pivot]] + greater
 
     def merge_sort(self, array):
         pass
