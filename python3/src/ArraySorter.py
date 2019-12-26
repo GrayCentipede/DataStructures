@@ -9,6 +9,10 @@ class ArraySorter(object):
 
     def bubble_sort(self, array):
         n      = len(array)
+
+        if (n <= 1):
+            return array
+
         swaped = True
 
         while swaped:
@@ -27,6 +31,9 @@ class ArraySorter(object):
 
     def selection_sort(self, array):
         n = len(array)
+
+        if (n <= 1):
+            return array
 
         for i in range(n - 1):
             min_index = i
@@ -62,6 +69,7 @@ class ArraySorter(object):
 
     def merge_sort(self, array):
         n = len(array)
+
         if (n <= 1):
             return array
 
@@ -113,6 +121,9 @@ class ArraySorter(object):
 
     def insertion_sort(self, array):
         n = len(array)
+
+        if (n <= 1):
+            return array
 
         for i in range(1, n):
             if (array[i-1] > array[i]):
