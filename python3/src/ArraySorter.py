@@ -61,7 +61,55 @@ class ArraySorter(object):
         return lesser + [array[pivot]] + greater
 
     def merge_sort(self, array):
-        pass
+        n = len(array)
+        if (n <= 1):
+            return array
+
+        half = int(n/2)
+
+        a = array[:half]
+        b = array[half:]
+
+        return self.merge(self.merge_sort(a), self.merge_sort(b))
+
+    def merge(self, a, b):
+        if not a:
+            return b
+        elif not b:
+            return a
+
+        n = len(a)
+        m = len(b)
+
+        new_array = []
+
+        while a and b:
+            max_a = a[-1]
+            max_b = b[-1]
+
+            if (max_a > max_b):
+                new_array.append(max_a)
+                a.pop()
+            elif (max_b > max_a):
+                new_array.append(max_b)
+                b.pop()
+            else:
+                new_array.append(max_a)
+                new_array.append(max_b)
+                a.pop()
+                b.pop()
+
+        if not a and not b:
+            return new_array.reverse()
+        elif not a:
+            while b:
+                new_array.append(b.pop())
+        else:
+            while a:
+                new_array.append(a.pop())
+
+        return new_array.reverse()
+
 
     def insertion_sort(self, array):
         n = len(array)
