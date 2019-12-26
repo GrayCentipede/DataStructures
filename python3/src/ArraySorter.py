@@ -1,4 +1,4 @@
-import random
+import random, math
 
 class ArraySorter(object):
 
@@ -127,4 +127,28 @@ class ArraySorter(object):
         return array
 
     def bucket_sort(self, array):
-        pass
+        n = len(array)
+
+        if (n <= 1):
+            return array
+
+        num_buckets = math.ceil(math.sqrt(n))
+
+        max_array = max(array)
+
+        divider = math.ceil((max_array + 1) / num_buckets)
+
+        buckets = [ [] for i in range(num_buckets) ]
+
+        for i in range(n):
+            j = math.floor(array[i] / divider)
+            buckets[j].append(array[i])
+
+        new_array = []
+
+        for bucket in buckets:
+            if bucket:
+                sorted_bucket = self.insertion_sort(bucket)
+                new_array.extend(sorted_bucket)
+
+        return new_array
