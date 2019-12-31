@@ -4,6 +4,14 @@
 * Stack. [Definition](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))
 * Queue. [Definition](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
+## Sorting Algorithms:
+* Bubble sort. [Definition](https://en.wikipedia.org/wiki/Bubble_sort)
+* Selection sort. [Definition](https://en.wikipedia.org/wiki/Selection_sort)
+* Merge sort. [Definition](https://en.wikipedia.org/wiki/Merge_sort)
+* Quick sort. [Definition](https://en.wikipedia.org/wiki/Quicksort)
+* Insertion sort. [Definition](https://en.wikipedia.org/wiki/Insertion_sort)
+* Bucket sort. [Definition](https://en.wikipedia.org/wiki/Bucket_sort)
+
 ## Unit Testing & Importing Modules
 To do the following you must be in the ```python3``` directory.
 
